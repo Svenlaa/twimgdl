@@ -1,0 +1,20 @@
+.download button {
+  display: none;
+  position: absolute;
+  background-color: #fff8;
+  border-color: #fffa;
+  top: 5px;
+  left: 5px;
+  padding: 0.3em;
+  font-size: 2em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .download button {
+    background-color: #000d;
+  }
+}
+
+.download:hover button {
+  display: block;
+}

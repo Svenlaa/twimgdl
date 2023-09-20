@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "twimgdl",
+  "version": "0.1",
+  "description": "the extension to easily download images from twitter.",
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "css": ["download.css"],
+      "matches": ["https://twitter.com/*"]
+    }
+  ]
+}

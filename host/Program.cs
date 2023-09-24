@@ -2,7 +2,7 @@ using twimgdl_host;
 
 var app = WebApplication.CreateBuilder(args).Build();
 
-const string FOLDER_URL = "images";
+const string FOLDER_URL = "../images";
 
 static Status SaveTwitterImage(string imageId)
 {

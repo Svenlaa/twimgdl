@@ -1,6 +1,15 @@
 using twimgdl_host;
 
-var app = WebApplication.CreateBuilder(args).Build();
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy => {
+        policy.WithOrigins("https://twitter.com").WithMethods("GET");
+    });
+});
+
+var app = builder.Build();
+app.UseCors();
 
 const string FOLDER_URL = "../images";
 

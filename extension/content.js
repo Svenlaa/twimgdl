@@ -1,4 +1,4 @@
-const APP_URL = "http://localhost:5066";
+const APP_URL = "http://localhost:5000";
 let downloads = [];
 let isOnline = false;
 
@@ -9,6 +9,7 @@ function clear() {
 async function getStatus() {
   isOnline = !!(await fetch(`${APP_URL}/status`, {
     method: "GET",
+    mode: "no-cors",
   }));
 }
 getStatus();
@@ -37,7 +38,7 @@ async function doThing() {
       e.preventDefault();
       if (downloads.includes(imageId)) return;
       downloads.push(imageId);
-      fetch(`${APP_URL}/image/${imageId}`, { method: "GET" });
+      fetch(`${APP_URL}/image/${imageId}`, { method: "GET", mode: "no-cors" });
     });
     parent.appendChild(button);
     parent.classList.add("download");
